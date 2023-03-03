@@ -1,0 +1,195 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce1tr2kjsubu3"]
+
+[ext_resource type="Theme" uid="uid://bvbotesss2tqf" path="res://themes/DarkStar.tres" id="1_n8og8"]
+[ext_resource type="PackedScene" uid="uid://dy11txudwdmgy" path="res://control_gallery.tscn" id="2_kf6so"]
+
+[node name="test2" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n8og8")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Create New" type="Panel" parent="TabContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Create New"]
+custom_minimum_size = Vector2(600, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -225.0
+offset_right = 300.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"NoMarginPanelContainer"
+
+[node name="Shadow" type="Panel" parent="TabContainer/Create New/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"DropShadow"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Create New/PanelContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="TabContainer/Create New/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Create New/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="title" type="Label" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Create New Project"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create Empty Project"
+
+[node name="Button2" type="Button" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Existing Project"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="TabContainer/Create New/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "or load one from the web..."
+
+[node name="ControlGallery" parent="TabContainer" instance=ExtResource("2_kf6so")]
+visible = false
+layout_mode = 2
+
+[node name="Inspector" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="InspectorDock" type="PanelContainer" parent="TabContainer/Inspector"]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -250.0
+offset_right = 150.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"NoMarginPanel"
+
+[node name="Shadow" type="Panel" parent="TabContainer/Inspector/InspectorDock"]
+layout_mode = 2
+theme_type_variation = &"DropShadow"
+
+[node name="PanelContainer" type="Panel" parent="TabContainer/Inspector/InspectorDock"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Inspector/InspectorDock/PanelContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Label" type="Label" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Velocity: "
+horizontal_alignment = 2
+
+[node name="LineEdit3" type="SpinBox" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+update_on_text_changed = true
+suffix = "%"
+
+[node name="Label2" type="Label" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Detune: "
+horizontal_alignment = 2
+
+[node name="LineEdit2" type="SpinBox" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -100.0
+update_on_text_changed = true
+suffix = "cents"
+
+[node name="Label3" type="Label" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+text = "Articulation:"
+horizontal_alignment = 2
+
+[node name="LineEdit4" type="OptionButton" parent="TabContainer/Inspector/InspectorDock/PanelContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 4
+selected = 0
+popup/item_0/text = "Legato (Normal)"
+popup/item_0/id = 0
+popup/item_1/text = "Pizzicato"
+popup/item_1/id = 1
+popup/item_2/text = "Sul Tasto"
+popup/item_2/id = 2
+popup/item_3/text = "Sul Ponticello"
+popup/item_3/id = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Overtone" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Overtone -- Untitled"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2

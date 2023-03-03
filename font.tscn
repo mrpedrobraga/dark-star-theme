@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf06e8vc81shp"]
+
+[ext_resource type="FontFile" uid="uid://c5pfdqhc3ekl1" path="res://themes/fonts/Nunito/Nunito-VariableFont_wght.ttf" id="1_waqg8"]
+
+[sub_resource type="FontVariation" id="FontVariation_li656"]
+base_font = ExtResource("1_waqg8")
+variation_embolden = 0.86
+
+[node name="font" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_li656")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Write Something!"
